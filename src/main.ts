@@ -5,6 +5,7 @@
  */
 
 // Components
+import './assets/styles.scss'
 import App from './App.vue'
 
 // Composables
