@@ -15,9 +15,9 @@
 import { ref } from 'vue';
 
 defineProps(['title'])
-const isOpen = ref(false)
+const isOpen = ref(true)
 
-const toggleCollapsible = (e:any) => {
+const toggleCollapsible = () => {
     isOpen.value = !isOpen.value;
 }
 
