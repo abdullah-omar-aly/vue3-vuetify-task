@@ -5,9 +5,6 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
-  '@mdi/font':
-    specifier: 7.0.96
-    version: 7.0.96
   roboto-fontface:
     specifier: '*'
     version: 0.10.0
@@ -25,6 +22,9 @@ devDependencies:
   '@babel/types':
     specifier: ^7.21.4
     version: 7.23.0
+  '@mdi/font':
+    specifier: 7.0.96
+    version: 7.0.96
   '@types/node':
     specifier: ^18.15.0
     version: 18.18.0
@@ -324,7 +324,7 @@ packages:
 
   /@mdi/font@7.0.96:
     resolution: {integrity: sha512-rzlxTfR64hqY8yiBzDjmANfcd8rv+T5C0Yedv/TWk2QyAQYdc66e0kaN1ipmnYU3RukHRTRcBARHzzm+tIhL7w==}
-    dev: false
+    dev: true
 
   /@nodelib/fs.scandir@2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
