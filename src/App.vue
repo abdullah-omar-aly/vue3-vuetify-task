@@ -1,6 +1,6 @@
 <template >
   <v-app>
-    <v-main dir="rtl" class="py-10">
+    <v-main dir="rtl" class="py-10 px-8">
 
       <!-- members section -->
       <MembersSection />
