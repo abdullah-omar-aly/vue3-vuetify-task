@@ -35,7 +35,7 @@
 </template>
 
 <script setup lang="ts">
-import Collapsible from '../components/Collapsible.vue';
+import Collapsible from '../components/CollapsibleCard.vue';
 import { onBeforeUnmount } from 'vue';
 import { ref, onMounted } from 'vue';
 import { reactive } from 'vue';

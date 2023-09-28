@@ -24,7 +24,7 @@
 </template>
 
 <script setup lang="ts">
-import Collapsible from '../components/Collapsible.vue';
+import Collapsible from '../components/CollapsibleCard.vue';
 
 </script>
 
