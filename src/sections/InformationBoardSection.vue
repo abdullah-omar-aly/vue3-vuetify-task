@@ -64,7 +64,7 @@
 </template>
 
 <script setup lang="ts">
-import Collapsible from '../components/collapsible.vue';
+import Collapsible from '../components/Collapsible.vue';
 import ChartCard from '@/components/ChartCard.vue';
 import { Chart as ChartJS, ArcElement, Tooltip, Title, BarElement, CategoryScale, LinearScale } from 'chart.js'
 import { computed } from 'vue';

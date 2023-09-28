@@ -6,7 +6,7 @@
             <v-icon icon="mdi-chevron-down" v-if="!isOpen"></v-icon>
         </h3>
         <div v-if="isOpen" >
-            <slot></slot>
+            <slot></slot> 
         </div>
     </div>
 </template>   

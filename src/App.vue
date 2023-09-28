@@ -23,10 +23,10 @@
 
 <script setup lang="ts">
 import { onMounted } from 'vue';
-import MembersSection from './sections/members-section.vue'
-import PerformanceIndicatorsSection from './sections/performance-indicators-section.vue'
-import SubcommitteesSection from './sections/subcommittees-section.vue'
-import InformationBoardSection from './sections/information-board-section.vue'
+import MembersSection from './sections/MembersSection.vue'
+import PerformanceIndicatorsSection from './sections/PerformanceIndicatorsSection.vue'
+import SubcommitteesSection from './sections/SubcommitteesSection.vue'
+import InformationBoardSection from './sections/InformationBoardSection.vue'
 
 onMounted(() => {
   document.documentElement.lang = 'ar';
