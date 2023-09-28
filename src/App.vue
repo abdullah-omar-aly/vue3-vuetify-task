@@ -2,6 +2,8 @@
   <v-app>
     <v-main dir="rtl" class="py-10 px-8">
 
+      <HeaderMenu />
+
       <!-- members section -->
       <MembersSection />
       
@@ -27,6 +29,7 @@ import MembersSection from './sections/MembersSection.vue'
 import PerformanceIndicatorsSection from './sections/PerformanceIndicatorsSection.vue'
 import SubcommitteesSection from './sections/SubcommitteesSection.vue'
 import InformationBoardSection from './sections/InformationBoardSection.vue'
+import HeaderMenu from './components/HeaderMenu.vue';
 
 onMounted(() => {
   document.documentElement.lang = 'ar';
