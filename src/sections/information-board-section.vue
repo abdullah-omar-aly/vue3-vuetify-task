@@ -35,7 +35,7 @@
             }">
                 <div class="px-10">
 
-                    <Doughnut style="width: 200px; max-height: 200px;margin: 0 auto;" :options="MeetingsChartConfig.options"
+                    <Doughnut style="width: 180px; max-height: 180px;margin: 0 auto;" :options="MeetingsChartConfig.options"
                         :data="MeetingsChartConfig.data" />
                     <!-- custom Legend -->
                     <div class="py-10"
@@ -137,7 +137,7 @@ const MeetingsChartConfig = computed(() => ({
     options: {
         responsive: true,
         maintainAspectRatio: false,
-        cutout: 80, // Display half of the pie
+        cutout: 60, // Display half of the pie
         rotation: -90, // Rotate by 180 degrees (half-pie)
         circumference: 180,
         elements: {
