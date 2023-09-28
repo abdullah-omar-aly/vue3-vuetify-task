@@ -1,6 +1,6 @@
 <template>
     <div class="collapsible mb-5">
-        <h3  @click="toggleCollapsible" class="text-lg px-4" style="cursor: pointer;">
+        <h3  @click="toggleCollapsible" style="cursor: pointer;padding: 1rem">
             <span>{{ title }}</span>
             <v-icon icon="mdi-chevron-up" v-if="isOpen"></v-icon>
             <v-icon icon="mdi-chevron-down" v-if="!isOpen"></v-icon>
@@ -9,7 +9,7 @@
             <slot></slot>
         </div>
     </div>
-</template>
+</template>   
 
 <script setup lang="ts">
 import { ref } from 'vue';
