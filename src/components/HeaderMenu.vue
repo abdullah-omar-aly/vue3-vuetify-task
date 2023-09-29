@@ -20,7 +20,7 @@
     </header>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss">
 header {
     padding: 2rem 1rem;
 
@@ -39,7 +39,7 @@ header {
                 margin: 0 1rem;
 
                 div.icon-container {
-                    border-radius: 0.6rem;
+                    border-radius: var(--rounded-primary);
                     padding: 0.5rem 1rem;
                 }
 
@@ -56,7 +56,7 @@ header {
             text-align: center;
 
             div {
-                border-radius: 0.6rem;
+                border-radius: var(--rounded-primary);
                 padding: 0.5rem 1rem;
                 background-color: white;
             }
