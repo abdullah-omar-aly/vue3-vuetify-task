@@ -7,13 +7,13 @@
                 name: 'mdi-checkbox-marked-circle-outline',
                 style: 'background-color: #969FB0;'
             }">
-                <div style="display: flex;padding: 2rem;justify-content: center;gap: 5%;">
+                <div style="display: flex;padding: 2rem;justify-content: center;align-items: center;gap: 5%;">
                     <div>
                         <Doughnut style="width: 170px; max-height: 170px;margin: 0 auto;" :options="TasksChartCofig.options"
                             :data="TasksChartCofig.data" />
                     </div>
                     <!--custom Legend -->
-                    <div style="flex-direction: column;  justify-content: center;flex-grow: 1;gap: 5px;">
+                    <div style="flex-direction: column;  justify-content: center;gap: 5px;">
                         <div v-for="(indicator, index) in chartsData.TaskIndicators" :key="`legend-badge-${index}`"
                             style="display: flex;align-items: center;gap: 10px;">
                             <div>
