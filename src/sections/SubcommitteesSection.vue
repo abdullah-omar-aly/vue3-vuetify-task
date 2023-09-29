@@ -43,7 +43,7 @@
 </template>
 
 <script setup lang="ts">
-import Collapsible from '../components/CollapsibleCard.vue';
+import Collapsible from '../components/Collapsible.vue';
 
 </script>
 

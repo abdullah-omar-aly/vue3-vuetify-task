@@ -1,7 +1,7 @@
 <template>
     <div class="collapsible mb-5">
-        <h3  @click="toggleCollapsible" style="cursor: pointer;padding: 1rem">
-            <span>{{ title }}</span>
+        <h3  @click="toggleCollapsible" style="cursor: pointer;padding: 1rem;">
+            <span style="font-size: 1.4rem;padding-left: 0.8rem;">{{ title }}</span>
             <v-icon icon="mdi-chevron-up" v-if="isOpen"></v-icon>
             <v-icon icon="mdi-chevron-down" v-if="!isOpen"></v-icon>
         </h3>
