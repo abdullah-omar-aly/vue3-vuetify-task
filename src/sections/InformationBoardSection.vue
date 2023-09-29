@@ -90,16 +90,15 @@
 import Collapsible from '../components/CollapsibleCard.vue';
 import ChartCard from '@/components/ChartCard.vue';
 import { Chart as ChartJS, ArcElement, Tooltip, Title, BarElement, CategoryScale, LinearScale } from 'chart.js'
-import { computed, ref } from 'vue';
 import { reactive } from 'vue';
 import { Doughnut, Bar } from 'vue-chartjs'
-import * as chartsData from './chartsData'
+import * as chartsData from '../data/chartsData'
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, ArcElement)
 
 
 
 
-const ItemsChartConfig = ref({
+const ItemsChartConfig = reactive({
     options: {
         indexAxis: "y"  as any ,
         scales: {
@@ -184,4 +183,4 @@ const MeetingsChartConfig = reactive({
     display: inline-block;
     margin-right: 3px;
 }
-</style>
+</style>../data/chartsData

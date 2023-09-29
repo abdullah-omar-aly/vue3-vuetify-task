@@ -1,18 +1,20 @@
+import colors from "@/utils/colors"
+
 export const TaskIndicators = [
     {
         value: 28,
         label: 'اكتملت في الموعد',
-        color: '#0FB96A'
+        color: colors.green
     },
     {
         value: 4,
         label: 'تجاوزت الموعد',
-        color: '#8A55A6'
+        color: colors.violet
     },
     {
         value: 12,
         label: 'مجدولة',
-        color: '#D0D4DD'
+        color: colors.lightgray
     },
 ]
 
@@ -20,17 +22,17 @@ export const MeetingIndicators = [
     {
         value: 28,
         label: 'اكتملت',
-        color: '#0FB96A'
+        color: colors.green
     },
     {
         value: 4,
         label: 'مجدولة',
-        color: '#D0D4DD'
+        color: colors.lightgray
     },
     {
         value: 12,
         label: 'لم تكتمل',
-        color: '#8A55A6'
+        color: colors.violet
     },
 ]
 
@@ -38,16 +40,16 @@ export const ItemsIndicators = [
     {
         value: 18,
         label: 'بنود مقترحة',
-        color: '#0FB96A'
+        color: colors.green
     },
     {
         value: 4,
         label: 'بنود مؤجلة',
-        color: '#8A55A6'
+        color: colors.violet
     },
     {
         value: 2,
         label: 'بنود محولة',
-        color: '#D0D4DD'
+        color: colors.lightgray
     },
 ]
