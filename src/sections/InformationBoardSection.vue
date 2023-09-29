@@ -31,7 +31,7 @@
 
             <ChartCard title="مؤشرات الاجتماعات" :icon="{
                 name: 'mdi-calendar-blank',
-                style: 'background-color: #8A55A6'
+                style: `background-color: ${colors.violet}`
             }">
                 <div class="px-10">
 
@@ -59,25 +59,19 @@
 
             <ChartCard title="مؤشرات البنود" :icon="{
                 name: 'mdi-comment-alert-outline',
-                style: 'background-color: #8A55A6'
+                style: `background-color: ${colors.violet}`
             }">
                 <!-- custom Legend -->
-
                 <div style="display: flex;justify-content: start;align-items: center;padding: 2rem;">
                     <div style="flex-direction: column;align-items: center;flex-grow: 1;gap: 5px">
                         <div v-for="(indicator, index) in chartsData.ItemsIndicators" :key="`legend-badge-${index}`"
                             style="text-align: end;padding: 0.1rem;">
-                            <!-- <div> -->
                             <p style="font-weight: bolder;font-size: 18px;">{{ indicator.value }}</p>
                             <p style="font-size: 15px;">{{ indicator.label }}</p>
-                            <!-- </div> -->
                         </div>
                     </div>
-                    <Bar style=" margin: 20px;max-width: 50%;max-height: 150px;" 
-                    
-                    :options="ItemsChartConfig.options"
-                    :data="ItemsChartConfig.data"
-                    />
+                    <Bar style=" margin: 20px;max-width: 50%;max-height: 150px;" :options="ItemsChartConfig.options"
+                        :data="ItemsChartConfig.data" />
                 </div>
             </ChartCard>
 
@@ -93,6 +87,7 @@ import { Chart as ChartJS, ArcElement, Tooltip, Title, BarElement, CategoryScale
 import { reactive } from 'vue';
 import { Doughnut, Bar } from 'vue-chartjs'
 import * as chartsData from '../data/chartsData'
+import colors from '@/utils/colors';
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, ArcElement)
 
 
@@ -100,7 +95,7 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, ArcElem
 
 const ItemsChartConfig = reactive({
     options: {
-        indexAxis: "y"  as any ,
+        indexAxis: "y" as any,
         scales: {
             x: {
                 display: false, // Hide the x-axis
@@ -183,4 +178,4 @@ const MeetingsChartConfig = reactive({
     display: inline-block;
     margin-right: 3px;
 }
-</style>../data/chartsData
+</style>
