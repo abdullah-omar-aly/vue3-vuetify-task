@@ -121,7 +121,7 @@ import Collapsible from '../components/Collapsible.vue';
 
   &.add-new {
     height: calc(100% - 32px);
-
+    min-height: 200px;
     button {
       height: 100%;
       display: grid;
