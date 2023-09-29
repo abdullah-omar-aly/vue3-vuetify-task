@@ -14,7 +14,7 @@
                     </div>
                     <!--custom Legend -->
                     <div style="flex-direction: column;  justify-content: center;flex-grow: 1;gap: 5px;">
-                        <div v-for="(indicator, index) in TaskIndicators" :key="`legend-badge-${index}`"
+                        <div v-for="(indicator, index) in chartsData.TaskIndicators" :key="`legend-badge-${index}`"
                             style="display: flex;align-items: center;gap: 10px;">
                             <div>
                                 <span :style="{ 'background-color': indicator.color }" class="badge"></span>
@@ -40,7 +40,7 @@
                     <!-- custom Legend -->
                     <div class="py-10"
                         style="display:flex; justify-content: center;flex-grow: 1;flex-direction: row;gap: 10%;">
-                        <div v-for="(indicator, index) in MeetingIndicators" :key="`legend-badge-${index}`"
+                        <div v-for="(indicator, index) in chartsData.MeetingIndicators" :key="`legend-badge-${index}`"
                             style="display: flex;align-items: center;gap: 10px;">
                             <div>
                                 <span :style="{ 'background-color': indicator.color }" class="badge"></span>
@@ -57,6 +57,27 @@
 
             </ChartCard>
 
+            <ChartCard title="مؤشرات البنود" :icon="{
+                name: 'mdi-comment-alert-outline',
+                style: 'background-color: #8A55A6'
+            }">
+                <!-- custom Legend -->
+
+                <div style="display: flex;justify-content: start;align-items: center;padding: 2rem;">
+                    <div style="flex-direction: column;align-items: center;flex-grow: 1;gap: 5px">
+                        <div v-for="(indicator, index) in chartsData.ItemsIndicators" :key="`legend-badge-${index}`"
+                            style="text-align: end;padding: 0.1rem;">
+                            <!-- <div> -->
+                            <p style="font-weight: bolder;font-size: 18px;">{{ indicator.value }}</p>
+                            <p style="font-size: 15px;">{{ indicator.label }}</p>
+                            <!-- </div> -->
+                        </div>
+                    </div>
+                    <Bar style=" margin: 20px;max-width: 50%;max-height: 150px;" :data="ItemsChartConfig.data"
+                      
+                        :options="ItemsChartConfig.options" />
+                </div>
+            </ChartCard>
 
 
         </v-row>
@@ -70,48 +91,41 @@ import { Chart as ChartJS, ArcElement, Tooltip, Title, BarElement, CategoryScale
 import { computed } from 'vue';
 import { reactive } from 'vue';
 import { Doughnut, Bar } from 'vue-chartjs'
-
+import * as chartsData from './chartsData'
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, ArcElement)
 
 
-const TaskIndicators = reactive([
-    {
-        value: 28,
-        label: 'اكتملت في الموعد',
-        color: '#0FB96A'
-    },
-    {
-        value: 4,
-        label: 'تجاوزت الموعد',
-        color: '#8A55A6'
-    },
-    {
-        value: 12,
-        label: 'مجدولة',
-        color: '#D0D4DD'
-    },
-])
-
-const MeetingIndicators = reactive([
-    {
-        value: 28,
-        label: 'اكتملت',
-        color: '#0FB96A'
-    },
-    {
-        value: 4,
-        label: 'مجدولة',
-        color: '#D0D4DD'
-    },
-    {
-        value: 12,
-        label: 'لم تكتمل',
-        color: '#8A55A6'
-    },
-])
 
 
-const TasksChartCofig = computed(() => ({
+const ItemsChartConfig = reactive({
+    options: {
+        indexAxis: 'y' ,
+        scales: {
+            x: {
+                display: false, // Hide the x-axis
+                reverse: true, // Start from the right
+            },
+            y: {
+                display: false, // Hide the y-axis
+                beginAtZero: true
+            },
+        },
+
+    },
+    data: {
+        labels: chartsData.ItemsIndicators.map(item => item.label),
+        datasets: [{
+            label: 'مؤشرات البنود',
+            data: [18, 4, 2],
+            backgroundColor: chartsData.ItemsIndicators.map(item => item.color),
+            borderRadius: 50,
+            borderSkipped: false,
+            barThickness: 15, // Adjust the bar width (spacing)
+        }]
+    }
+})
+
+const TasksChartCofig = reactive({
     options: {
         responsive: true,
         maintainAspectRatio: false,
@@ -124,16 +138,16 @@ const TasksChartCofig = computed(() => ({
         },
     },
     data: {
-        labels: TaskIndicators.map(indicator => indicator.label),
+        labels: chartsData.TaskIndicators.map(indicator => indicator.label),
         datasets: [
             {
-                backgroundColor: TaskIndicators.map(indicator => indicator.color),
-                data: TaskIndicators.map(indicator => indicator.value),
+                backgroundColor: chartsData.TaskIndicators.map(indicator => indicator.color),
+                data: chartsData.TaskIndicators.map(indicator => indicator.value),
             }
         ]
     }
-}))
-const MeetingsChartConfig = computed(() => ({
+})
+const MeetingsChartConfig = reactive({
     options: {
         responsive: true,
         maintainAspectRatio: false,
@@ -148,15 +162,15 @@ const MeetingsChartConfig = computed(() => ({
         },
     },
     data: {
-        labels: MeetingIndicators.map(indicator => indicator.label),
+        labels: chartsData.MeetingIndicators.map(indicator => indicator.label),
         datasets: [
             {
-                backgroundColor: MeetingIndicators.map(indicator => indicator.color),
-                data: MeetingIndicators.map(indicator => indicator.value)
+                backgroundColor: chartsData.MeetingIndicators.map(indicator => indicator.color),
+                data: chartsData.MeetingIndicators.map(indicator => indicator.value)
             }
         ]
     }
-}))
+})
 </script>
 
 <style scoped>
