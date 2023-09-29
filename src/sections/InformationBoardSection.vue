@@ -73,9 +73,11 @@
                             <!-- </div> -->
                         </div>
                     </div>
-                    <Bar style=" margin: 20px;max-width: 50%;max-height: 150px;" :data="ItemsChartConfig.data"
-                      
-                        :options="ItemsChartConfig.options" />
+                    <Bar style=" margin: 20px;max-width: 50%;max-height: 150px;" 
+                    
+                    :options="ItemsChartConfig.options"
+                    :data="ItemsChartConfig.data"
+                    />
                 </div>
             </ChartCard>
 
@@ -88,7 +90,7 @@
 import Collapsible from '../components/CollapsibleCard.vue';
 import ChartCard from '@/components/ChartCard.vue';
 import { Chart as ChartJS, ArcElement, Tooltip, Title, BarElement, CategoryScale, LinearScale } from 'chart.js'
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { reactive } from 'vue';
 import { Doughnut, Bar } from 'vue-chartjs'
 import * as chartsData from './chartsData'
@@ -97,9 +99,9 @@ ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, ArcElem
 
 
 
-const ItemsChartConfig = reactive({
+const ItemsChartConfig = ref({
     options: {
-        indexAxis: 'y' ,
+        indexAxis: "y"  as any ,
         scales: {
             x: {
                 display: false, // Hide the x-axis
